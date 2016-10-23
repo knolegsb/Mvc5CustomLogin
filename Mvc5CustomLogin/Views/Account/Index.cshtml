@@ -3,13 +3,6 @@
     Layout = null;
 }
 
-@*@section head{        
-    <link href="~/Content/css/normalize.css" rel="stylesheet" />
-    <link href="~/Content/css/style.css" rel="stylesheet" />
-
-    <script src="~/scripts/js/index.js"></script>
-    <script src="~/scripts/js/prefixfree.min.js"></script>
-}*@
 <html>
 <head>
     <title>Login</title>
@@ -23,14 +16,14 @@
     <script src="~/scripts/js/prefixfree.min.js"></script>
 </head>
 <body>
-    
+
     <div class="wrapper">
         @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login" }))
         {
 
             <p class="title">Log In &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red; font-size:.7em;">@ViewBag.Error</span></p>
+
             @Html.TextBoxFor(m => m.Account.Username, new { placeholder = "Username", autofocus = true })
-            @*<input type="text" placeholder="Username" autofocus />*@
             <i class="fa fa-user"></i>
             @Html.TextBoxFor(m => m.Account.Password, new { placeholder = "Password" })
             <i class="fa fa-key"></i>
@@ -39,42 +32,11 @@
                 <i class="spinner"></i>
                 <span class="state">Log in</span>
             </button>
-            @*<table cellpadding="2" cellspacing="2">
-                    <tr>
-                        <td>@Html.LabelFo(m => m.account.Username</td>
-                        <td>@Html.TextBoxFor(m => m.account.Username)</td>
-                    </tr>
-                    <tr>
-                        <td>@Html.LableFor(m => m.accoutn.Password</td>
-                        <td>@Html.TextBoxFor(m => m.account.Password)</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><input type="submit" value="Login" /></td>
-                    </tr>
-                </table>*@
+            
         }
     </div>
 
 </body>
-</html>
-@*<h2 class="title">Login</h2>*@
 
-@*@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login" }))
-{
-    <table cellpadding="2" cellspacing="2">
-        <tr>
-            <td>Username</td>
-            <td>@Html.TextBoxFor(m => m.account.Username)</td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td>@Html.TextBoxFor(m => m.account.Password)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" value="Login" /></td>
-        </tr>
-    </table>
-}*@
+</html>
 
